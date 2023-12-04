@@ -1,47 +1,38 @@
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "lists.h"
+/**
+ * recurPalindrome - checks if singly linked list is palindrome
+ * @left: pointer to head of singly linked list
+ * @right: head of singly linked list
+ *
+ * Return: 0 if it is not a palindrome, 1 if it is a palindrome
+ */
+
+int recurPalindrome(listint_t **left, listint_t *right)
+{
+	int ret;
+
+	if (right == NULL)
+		return (1);
+
+	ret = recurPalindrome(left, right->next);
+	if (ret == 0)
+		return (0);
+
+	ret = (right->n == (*left)->n);
+
+	*left = (*left)->next;
+
+	return (ret);
+}
 /**
  * is_palindrome - checks if singly linked list is palindrome
  * @head: pointer to head of singly linked list
  *
  * Return: 0 if it is not a palindrome, 1 if it is a palindrome
  */
-
 int is_palindrome(listint_t **head)
 {
-if (*head == NULL)
-{
-return (1);
-}
-listint_t *slow = *head;
-listint_t *fast = *head;
-listint_t *prev = NULL;
-
-while (fast != NULL && fast->next != NULL)
-{
-fast = fast->next->next;
-
-listint_t *next = slow->next;
-slow->next = prev;
-prev = slow;
-slow = next;
-}
-
-if (fast != NULL)
-{
-slow = slow->next;
-}
-
-while (prev != NULL && slow != NULL)
-{
-if (prev->n != slow->n)
-{
-return (0);
-}
-prev = prev->next;
-slow = slow->next;
-}
-return (1);
+	if (!head)
+		return (0);
+	return (recurPalindrome(head, *head));
 }
