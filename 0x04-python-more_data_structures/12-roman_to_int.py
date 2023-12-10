@@ -12,12 +12,14 @@ def roman_to_int(roman_string):
         'M': 1000
     }
     total = 0
-    prev_total = 0
+    prev_value = 0
     for symbol in reversed(roman_string):
         value = roman_numerals.get(symbol, 0)
-        if value >= total:
+        if value == 0:
+            return 0
+        if value >= prev_value:
             total += value
         else:
             total -= value
-        prev_value = total
+        prev_value = value
     return total
