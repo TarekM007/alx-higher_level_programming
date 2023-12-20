@@ -1,12 +1,11 @@
-#!/usr/bin/python3
 class Square:
     """
-    a class representing a square
+    A class representing a square.
 
-    attributes:
+    Attributes:
         None
 
-    methodes:
+    Methods:
         None
     """
     pass
