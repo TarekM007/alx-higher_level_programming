@@ -59,10 +59,13 @@ if len(sys.argv) != 2:
 N = sys.argv[1]
 
 try:
-    N = int(N)
-except:
-    print("N must be a number")
-    sys.exit(1)
+    queen = NQueen(N)
+    res = queen.nQueen(1)
+
+    for i in res:
+        print(i)
+except Exception as e:
+    print("An error occurred:", str(e))
 
 if N < 4:
     print("N must be at least 4")
