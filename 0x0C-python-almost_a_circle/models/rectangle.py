@@ -16,38 +16,38 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-        @property
-        def width(self):
-            """width of this triangle"""
-            return self.__width
+    @property
+    def width(self):
+        """width of this triangle"""
+        return self.__width
 
-        @width.setter
-        def width(self, value):
-            self.__width = value
+    @width.setter
+    def width(self, value):
+        self.__width = value
 
-        @property
-        def height(self):
-            """height of this triangle"""
-            return self.__height
+    @property
+    def height(self):
+        """height of this triangle"""
+        return self.__height
 
-        @height.setter
-        def height(self, value):
-            self.__height = value
+    @height.setter
+    def height(self, value):
+        self.__height = value
 
-        @property
-        def x(self):
-            """x of this triangle"""
-            return self.__x
+    @property
+    def x(self):
+        """x of this triangle"""
+        return self.__x
 
-        @x.setter
-        def x(self, value):
-            self.__x = value
+    @x.setter
+    def x(self, value):
+        self.__x = value
 
-        @property
-        def y(self):
-            """y of this triangle"""
-            return self.__y
+    @property
+    def y(self):
+        """y of this triangle"""
+        return self.__y
 
-        @y.setter
-        def y(self, value):
-            self.__y = value
+    @y.setter
+    def y(self, value):
+        self.__y = value
